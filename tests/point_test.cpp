@@ -1,10 +1,14 @@
-#include <catch2/catch_test_macros.hpp>
-#include <catch2/benchmark/catch_benchmark.hpp>
-#include <catch2/benchmark/catch_constructor.hpp>
-#include <catch2/generators/catch_generators_range.hpp>
+#include <iostream>
+#include "../src/Point.hpp"
 
-#include "../src/point.hpp"
+int main() {
+    Point p1(3.2, 9.8);
+    Point p2(5.5, -1.2);
 
-TEST_CASE( "it returns Hello World" ) {
-    REQUIRE( hello() == "Hello World!" );
+    std::cout << p1 - p2 << std::endl;    // distance
+    std::cout << (p1 == p2) << std::endl; // 0
+    std::cout << (p1 != p2) << std::endl; // 1
+    std::cout << p1 / p2 << std::endl;    // midpoint
+
+    return 0;
 }
